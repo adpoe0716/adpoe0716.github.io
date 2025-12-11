@@ -28,7 +28,7 @@ export const SKILLS: Skill[] = [
   { name: "LangChain", category: "AI" },
   { name: "LlamaIndex", category: "AI" },
   { name: "Git", category: "Tools" },
-  { name: "OOGLE GCP", category: "Tools" },
+  { name: "GOOGLE GCP", category: "Tools" },
 ];
 
 export const SKILL_ICONS = {
