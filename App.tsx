@@ -5,6 +5,8 @@ import {
   MapPin, 
   Phone, 
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Menu,
   X,
   Server,
@@ -16,7 +18,10 @@ import {
   Calendar,
   MessageSquareQuote,
   Sparkles,
-  ArrowUpRight
+  ArrowUpRight,
+  Medal,
+  CheckCircle,
+  Maximize2
 } from 'lucide-react';
 
 import { PROFILE, SKILLS, EXPERIENCES, PROJECTS, CERTIFICATIONS, EDUCATION, SKILL_ICONS } from './constants';
@@ -165,15 +170,15 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
+    <div id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden z-10 scroll-mt-0">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
         <div className="mb-10 relative inline-block group animate-float">
           <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
           <img 
-            src="https://picsum.photos/200" 
+            src={PROFILE.avatar} 
             alt="Profile" 
-            className="relative w-32 h-32 md:w-44 md:h-44 rounded-full mx-auto border-[3px] border-white/20 shadow-2xl object-cover"
+            className="relative w-32 h-32 md:w-44 md:h-44 rounded-full mx-auto border-[3px] border-white/20 shadow-2xl object-cover bg-slate-800"
           />
           <div className="absolute -top-2 -right-2 bg-darker p-2 rounded-full border border-primary/50 shadow-[0_0_15px_rgba(129,140,248,0.5)]">
             <GeminiIcon className="w-5 h-5 text-primary animate-pulse" />
@@ -181,7 +186,7 @@ const Hero = () => {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-          安安你好，我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
+          你好，我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-slate-200 mb-8 font-light flex items-center justify-center gap-2">
           {PROFILE.title}
@@ -200,17 +205,11 @@ const Hero = () => {
             <Github className="mr-2 h-5 w-5" />
             GitHub
           </a>
-          <a 
-            href={`mailto:${PROFILE.email}`}
-            className="inline-flex items-center justify-center px-8 py-3 border border-slate-500 text-base font-medium rounded-full text-white bg-card hover:bg-slate-800 md:py-4 md:text-lg transition-all transform hover:scale-105 shadow-lg backdrop-blur-sm"
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            聯絡我
-          </a>
+          {/* Contact Me Button Removed as requested */}
         </div>
       </div>
       
-      <div className="absolute bottom-10 animate-bounce cursor-pointer" onClick={() => document.getElementById('about')?.scrollIntoView({behavior: 'smooth'})}>
+      <div className="absolute bottom-10 animate-bounce cursor-pointer" onClick={() => document.getElementById('skills')?.scrollIntoView({behavior: 'smooth'})}>
         <ChevronDown className="text-slate-400 w-8 h-8" />
       </div>
     </div>
@@ -223,7 +222,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 relative z-10">
+    <section id="skills" className="py-24 relative z-10 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-4 text-white">
           <span className="border-b-4 border-primary/50 pb-2 shadow-[0_4px_10px_rgba(129,140,248,0.3)]">核心技能</span>
@@ -293,7 +292,7 @@ const ExperienceSection = () => {
   const [reflectionExp, setReflectionExp] = useState<Experience | null>(null);
 
   return (
-    <section id="experience" className="py-24 relative z-10">
+    <section id="experience" className="py-24 relative z-10 scroll-mt-16">
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-20 text-white">
@@ -331,6 +330,16 @@ const ExperienceSection = () => {
                     </div>
                   </div>
 
+                  {exp.image && (
+                    <div className="mb-6 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                      <img 
+                        src={exp.image} 
+                        alt={exp.company} 
+                        className="w-full h-48 sm:h-64 object-cover hover:scale-105 transition-transform duration-500 bg-slate-800"
+                      />
+                    </div>
+                  )}
+
                   <ul className="list-disc list-outside ml-6 space-y-4 text-slate-100 text-lg leading-relaxed mb-8">
                     {exp.description.map((desc, i) => (
                       <li key={i} className="pl-1">{desc}</li>
@@ -366,18 +375,18 @@ const ExperienceSection = () => {
       {reflectionExp && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" onClick={() => setReflectionExp(null)}></div>
-          <div className="bg-darker/95 backdrop-blur-xl w-full max-w-2xl rounded-2xl shadow-[0_0_50px_rgba(129,140,248,0.2)] relative animate-fadeIn flex flex-col overflow-hidden border border-white/20">
-            <div className="p-6 bg-gradient-to-r from-primary/80 to-secondary/80 text-white relative">
+          <div className="bg-darker/95 backdrop-blur-xl w-full max-w-2xl rounded-2xl shadow-[0_0_50px_rgba(129,140,248,0.2)] relative animate-fadeIn flex flex-col overflow-hidden border border-white/20 max-h-[90vh]">
+            <div className="p-6 bg-gradient-to-r from-primary/80 to-secondary/80 text-white relative flex-shrink-0">
               <button 
                 onClick={() => setReflectionExp(null)}
                 className="absolute top-4 right-4 p-1 hover:bg-white/20 rounded-full transition-colors"
               >
                 <X size={24} />
               </button>
-              <h3 className="text-2xl font-bold mb-1">{reflectionExp.company}</h3>
+              <h3 className="text-2xl font-bold mb-1 pr-8">{reflectionExp.company}</h3>
               <p className="opacity-90">{reflectionExp.role} - 階段性反思</p>
             </div>
-            <div className="p-8">
+            <div className="p-8 overflow-y-auto">
               <div className="prose prose-lg text-slate-200 leading-relaxed">
                 <p>{reflectionExp.reflection}</p>
               </div>
@@ -391,9 +400,29 @@ const ExperienceSection = () => {
 
 const ProjectSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  // Reset image index when a new project is selected
+  useEffect(() => {
+    if (selectedProject) {
+      setCurrentImgIndex(0);
+    }
+  }, [selectedProject]);
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!selectedProject) return;
+    setCurrentImgIndex((prev) => (prev + 1) % selectedProject.images.length);
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!selectedProject) return;
+    setCurrentImgIndex((prev) => (prev - 1 + selectedProject.images.length) % selectedProject.images.length);
+  };
 
   return (
-    <section id="projects" className="py-24 relative z-10">
+    <section id="projects" className="py-24 relative z-10 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl font-bold text-center mb-16 text-white">
           <span className="border-b-4 border-secondary/50 pb-2 shadow-[0_4px_10px_rgba(192,132,252,0.3)]">精選專案</span>
@@ -408,9 +437,9 @@ const ProjectSection = () => {
             >
               <div className="relative h-56 overflow-hidden bg-slate-800">
                 <img 
-                  src={project.image} 
+                  src={project.images[0]} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent opacity-90"></div>
                 
@@ -458,27 +487,58 @@ const ProjectSection = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal with Carousel */}
       {selectedProject && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={() => setSelectedProject(null)}></div>
-          <div className="glass-panel w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-[0_0_50px_rgba(255,255,255,0.1)] relative animate-fadeIn flex flex-col bg-darker border border-white/20">
+          <div className="glass-panel w-full max-w-4xl max-h-[85vh] overflow-y-auto rounded-3xl shadow-[0_0_50px_rgba(255,255,255,0.1)] relative animate-fadeIn flex flex-col bg-darker border border-white/20 my-8">
             
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-10 p-2 bg-black/60 hover:bg-black/80 rounded-full text-white transition-colors border border-white/20 backdrop-blur-md"
+              className="fixed z-[70] top-4 right-4 md:absolute md:top-4 md:right-4 p-2 bg-black/60 hover:bg-primary rounded-full text-white transition-all border border-white/20 backdrop-blur-md shadow-lg"
             >
               <X size={24} />
             </button>
 
-            <div className="relative h-64 md:h-80 flex-shrink-0 bg-slate-800">
+            {/* Carousel Container */}
+            <div className="relative w-full aspect-video flex-shrink-0 bg-slate-900 group/carousel overflow-hidden">
               <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title} 
-                className="w-full h-full object-cover"
+                src={selectedProject.images[currentImgIndex]} 
+                alt={`${selectedProject.title} - ${currentImgIndex + 1}`} 
+                className="w-full h-full object-cover object-top transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-darker to-transparent"></div>
-              <div className="absolute bottom-6 left-6 md:left-10 right-6 text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-darker to-transparent opacity-60"></div>
+              
+              {/* Navigation Arrows */}
+              {selectedProject.images.length > 1 && (
+                <>
+                  <button 
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors border border-white/10 opacity-0 group-hover/carousel:opacity-100 z-10"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button 
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 hover:bg-black/70 text-white transition-colors border border-white/10 opacity-0 group-hover/carousel:opacity-100 z-10"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                  
+                  {/* Indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                    {selectedProject.images.map((_, idx) => (
+                      <button 
+                        key={idx}
+                        onClick={(e) => { e.stopPropagation(); setCurrentImgIndex(idx); }}
+                        className={`w-2 h-2 rounded-full transition-all ${idx === currentImgIndex ? 'bg-white w-4' : 'bg-white/40 hover:bg-white/60'}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+
+              <div className="absolute bottom-6 left-6 md:left-10 right-6 text-white pointer-events-none">
                 <h3 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-md">{selectedProject.title}</h3>
                 <span className="bg-primary/90 backdrop-blur-md px-4 py-1 rounded-md text-white font-bold inline-block shadow-[0_0_15px_rgba(129,140,248,0.5)]">
                   {selectedProject.period}
@@ -540,7 +600,7 @@ const ProjectSection = () => {
 
 const EducationAndCertSection = () => {
   return (
-    <section id="certifications" className="py-24 relative z-10">
+    <section id="certifications" className="py-24 relative z-10 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           
@@ -566,16 +626,17 @@ const EducationAndCertSection = () => {
             </h2>
             <div className="glass-panel p-8 rounded-2xl glass-card-hover transition-all duration-300">
               <ul className="space-y-5">
-                {CERTIFICATIONS.map((cert, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mr-4 mt-1 border border-green-500/30">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-slate-200 text-lg">{cert.name}</span>
-                  </li>
-                ))}
+                {CERTIFICATIONS.map((cert, index) => {
+                  const isAward = cert.type === 'award' || cert.name.includes('競賽') || cert.name.includes('名');
+                  return (
+                    <li key={index} className="flex items-start">
+                      <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1 border ${isAward ? 'bg-yellow-500/20 border-yellow-500/50 text-yellow-400' : 'bg-green-500/20 border-green-500/30 text-green-400'}`}>
+                        {isAward ? <Medal className="w-5 h-5" /> : <CheckCircle className="w-5 h-5" />}
+                      </div>
+                      <span className="text-slate-200 text-lg py-1">{cert.name}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -625,7 +686,6 @@ function App() {
       <StarBackground />
       <Navbar />
       <Hero />
-      <div id="about" className="sr-only">About Anchor</div>
       <SkillsSection />
       <ExperienceSection />
       <ProjectSection />

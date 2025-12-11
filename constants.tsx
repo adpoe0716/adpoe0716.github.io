@@ -1,5 +1,5 @@
 import { Experience, Project, Skill, Certification, Education } from './types';
-import { Code, Database, Layout, Brain, Terminal, Server } from 'lucide-react';
+import { Database, Layout, Brain, Terminal, Server } from 'lucide-react';
 import React from 'react';
 
 export const PROFILE = {
@@ -10,7 +10,8 @@ export const PROFILE = {
   phone: "0968930679",
   github: "https://github.com/adpoe0716",
   location: "New Taipei, Taiwan",
-  about: "畢業於國立聯合大學資訊管理學系，具備前後端全端開發能力的軟體工程師。曾經使用 Vue.js、React.js 等前端框架以及 ASP.NET、Python Flask、Node.js 進行後端開發經驗。擁有敏捷開發 (Scrum) 實務經驗，實作過 OpenAI API 與 LangChain/LlamaIndex 開發 AI 應用與自動化工具。曾於實習期間開發企業級招募系統，並於畢業專題中結合 AI 技術實作 ESG 永續魚塭管理資訊系統。"
+  about: "畢業於國立聯合大學資訊管理學系，具備前後端全端開發能力的軟體工程師。曾經使用 Vue.js、React.js 等前端框架以及 ASP.NET、Python Flask、Node.js 進行後端開發經驗。擁有敏捷開發 (Scrum) 實務經驗，實作過 OpenAI API 與 LangChain/LlamaIndex 開發 AI 應用與自動化工具。曾於實習期間開發企業級招募系統，並於畢業專題中結合 AI 技術實作 ESG 永續魚塭管理資訊系統。",
+  avatar: "img/avatar.jpg" // Added avatar path
 };
 
 export const SKILLS: Skill[] = [
@@ -51,7 +52,8 @@ export const EXPERIENCES: Experience[] = [
       "人資招募系統開發：參與開發「Campus Recruit」系統與校園履歷表單。",
       "透過數位化整合履歷收取、資料整理、篩選候選人至面試邀約的流程，大幅提升 HR 審閱與招募效率。"
     ],
-    reflection: "在鈦坦科技的這段時間，最大的收穫不僅是技術上的精進，更是對「敏捷思維」的深刻體悟。透過每日的 Stand-up meeting 和結對程式設計，我學會了如何高效溝通以及在團隊中擁抱變化。我們不再只是埋頭寫程式，而是不斷思考如何為使用者創造最大價值。這段經歷讓我明白，優秀的軟體工程師不只要會寫 Code，更要懂得如何協作與解決真正的問題。"
+    reflection: "在鈦坦科技的這段時間，最大的收穫不僅是技術上的精進，更是對「敏捷思維」的深刻體悟。透過每日的 Stand-up meeting 和結對程式設計，我學會了如何高效溝通以及在團隊中擁抱變化。我們不再只是埋頭寫程式，而是不斷思考如何為使用者創造最大價值。這段經歷讓我明白，優秀的軟體工程師不只要會寫 Code，更要懂得如何協作與解決真正的問題。",
+    image: "img/titansoft.jpg"
   },
   {
     company: "思客數據 (SEEKERSDATA / THINKER'S CAFE)",
@@ -64,7 +66,8 @@ export const EXPERIENCES: Experience[] = [
       "RAG 知識庫建置：設計並製作檢索增強生成 (RAG) 知識庫原型，整合聊天記錄與圖像數據，實現高準確度的語意搜索功能。",
       "技術品牌經營：管理團隊 Instagram 技術頻道，分享 AI 工具應用與開發見解。"
     ],
-    reflection: "這是我第一次將 AI 技術實際落地到商業場景中。從零開始建置 RAG 知識庫的過程充滿挑戰，尤其是在調整 Prompt 和處理資料清洗的部分。看到自己開發的自動化工具能為團隊節省大量重複性工作的時間，那種成就感是無可比擬的。這份工作也培養了我獨立解決問題的能力，以及如何快速學習新技術（如 LangChain）並應用到專案中。"
+    reflection: "這是我第一次將 AI 技術實際落地到商業場景中。從零開始建置 RAG 知識庫的過程充滿挑戰，尤其是在調整 Prompt 和處理資料清洗的部分。看到自己開發的自動化工具能為團隊節省大量重複性工作的時間，那種成就感是無可比擬的。這份工作也培養了我獨立解決問題的能力，以及如何快速學習新技術（如 LangChain）並應用到專案中。",
+    image: "img/seekers.jpg"
   }
 ];
 
@@ -74,7 +77,7 @@ export const PROJECTS: Project[] = [
     period: "2024",
     description: "基於 NLP 技術的政治傾向分析工具",
     techStack: ["Python", "Transformers (BERT)", "Scikit-learn", "FastAPI", "Pandas"],
-    image: "https://picsum.photos/seed/politics/600/400",
+    images: ["img/politics-1.jpg", "img/politics-2.jpg"],
     details: [
       "利用自然語言處理 (NLP) 技術，分析文本內容並預測其政治傾向（如：偏藍、偏綠、中立）。",
       "使用 Transformer 架構（BERT）進行模型微調訓練，提升對台灣政治語境的理解準確度。",
@@ -87,7 +90,7 @@ export const PROJECTS: Project[] = [
     period: "2023.06 - 2025.01",
     description: "畢業專題 - 結合 IoT 與 GenAI 的永續魚塭管理系統",
     techStack: ["React", "Node.js", "Flask", "MySQL", "LangChain", "OpenAI API", "Ant Design"],
-    image: "https://picsum.photos/seed/fishfarm/600/400",
+    images: ["img/fishfarm-1.jpg", "img/fishfarm-2.jpg", "img/fishfarm-3.jpg"],
     details: [
       "即時監控儀表板：結合模擬 IoT 感測器數據（水溫、pH值、溶氧量等），利用 React 與 Ant Design 打造低延遲儀表板。",
       "可視化數據：以雷達圖與熱力圖視覺化水質與藻類分佈。",
@@ -99,7 +102,7 @@ export const PROJECTS: Project[] = [
     period: "2025.02 - 2025.06",
     description: "鈦坦科技實習專案 - 企業級招募流程管理",
     techStack: ["Vue.js", "ASP.NET", "TypeScript", "TailwindCSS", "MSSQL"],
-    image: "https://picsum.photos/seed/campus/600/400",
+    images: ["img/campus-1.jpg"],
     details: [
       "解決手動處理履歷的痛點，整合資料收集、篩選到面試邀約。",
       "開發校園履歷投遞表單與後台管理介面。",
@@ -111,7 +114,7 @@ export const PROJECTS: Project[] = [
     period: "2022.06 - 2023.01",
     description: "營建專案管理平台",
     techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
-    image: "https://picsum.photos/seed/construction/600/400",
+    images: ["img/construction-1.jpg"],
     details: [
       "建置營建專案管理平台，包含專案增刪查改 (CRUD)。",
       "實作日誌追蹤以及進度排程管理功能，協助業主數位化管理工地進度。"
@@ -120,13 +123,14 @@ export const PROJECTS: Project[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
-  { name: "全國技能競賽 - 機器人職類 (北區分賽) 佳作" },
-  { name: "數位電子乙級技術士證" },
-  { name: "電腦軟體設計丙級技術士證" },
-  { name: "電腦軟體應用丙級技術士證" },
-  { name: "電腦硬體裝修丙級技術士證" },
-  { name: "網路架設丙級技術士證" },
-  { name: "工業電子丙級技術士證" }
+  { name: "全國技能競賽 - 機器人職類 (北區分賽) 佳作", type: "award" },
+  { name: "Innoserve 校內初審第二名", type: "award" },
+  { name: "數位電子乙級技術士證", type: "certification" },
+  { name: "電腦軟體設計丙級技術士證", type: "certification" },
+  { name: "電腦軟體應用丙級技術士證", type: "certification" },
+  { name: "電腦硬體裝修丙級技術士證", type: "certification" },
+  { name: "網路架設丙級技術士證", type: "certification" },
+  { name: "工業電子丙級技術士證", type: "certification" }
 ];
 
 export const EDUCATION: Education = {

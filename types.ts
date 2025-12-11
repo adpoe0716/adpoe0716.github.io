@@ -12,6 +12,7 @@ export interface Experience {
   description: string[];
   techStack: string[];
   reflection?: string; // Added field for personal thoughts
+  image?: string; // Added image for experience
 }
 
 export interface Project {
@@ -21,12 +22,13 @@ export interface Project {
   details: string[];
   techStack: string[];
   link?: string;
-  image: string;
+  images: string[]; // Changed from image: string to images: string[]
 }
 
 export interface Certification {
   name: string;
   year?: string;
+  type?: 'award' | 'certification'; // Added to distinguish awards from certs
 }
 
 export interface Education {
