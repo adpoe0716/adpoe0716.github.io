@@ -82,14 +82,12 @@ export const PROJECTS: Project[] = [
     title: "政黨傾向分辨器 (Political Leaning Classifier)",
     period: "2024",
     description: "基於 NLP 技術的政治傾向分析工具",
-    techStack: ["Python", "Transformers (BERT)", "Scikit-learn", "FastAPI", "Pandas"],
+    techStack: ["Python", "Logistic Regression","Pandas"],
     images: ["img/python.png"],
     details: [
-      "利用自然語言處理 (NLP) 技術，分析文本內容並預測其政治傾向（如：偏藍、偏綠、中立）。",
-      "使用 Transformer 架構（BERT）進行模型微調訓練，提升對台灣政治語境的理解準確度。",
-      "資料前處理：包含繁體中文斷詞、去除停用詞與資料增強。",
-      "部署為 RESTful API，可供前端或其他應用程式串接即時分析。"
-      
+      "選取四個具有代表性的側翼粉專，利用自然語言處理 (NLP) 技術，分析文本內容並預測其政治傾向（如：偏藍、偏綠、中立）。",
+      "使用羅吉斯回歸模型（Logistic Regression）訓練並驗證，準確率良好後完成模型建構",
+      "資料前處理：包含繁體中文斷詞、去除停用詞與資料增強。",      
     ]
   },
   {
