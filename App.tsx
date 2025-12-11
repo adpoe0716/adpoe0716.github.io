@@ -181,7 +181,7 @@ const Hero = () => {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-          你好，我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
+          安安你好，我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-slate-200 mb-8 font-light flex items-center justify-center gap-2">
           {PROFILE.title}
