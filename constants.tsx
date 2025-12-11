@@ -18,18 +18,17 @@ export const SKILLS: Skill[] = [
   { name: "Vue.js", category: "Frontend" },
   { name: "React.js", category: "Frontend" },
   { name: "TypeScript", category: "Frontend" },
-  { name: "TailwindCSS", category: "Frontend" },
   { name: "ASP.NET", category: "Backend" },
   { name: "Node.js", category: "Backend" },
   { name: "Python (Flask)", category: "Backend" },
   { name: "MSSQL / MySQL", category: "Database" },
   { name: "MongoDB", category: "Database" },
   { name: "OpenAI API", category: "AI" },
+  { name: "Stable Diffusion", category: "AI" },
   { name: "LangChain", category: "AI" },
   { name: "LlamaIndex", category: "AI" },
-  { name: "Git & GCP", category: "Tools" },
-  { name: "Docker", category: "Tools" },
-  { name: "Postman", category: "Tools" },
+  { name: "Git", category: "Tools" },
+  { name: "OOGLE GCP", category: "Tools" },
 ];
 
 export const SKILL_ICONS = {
