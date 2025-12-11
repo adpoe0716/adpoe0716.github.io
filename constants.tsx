@@ -5,7 +5,7 @@ import React from 'react';
 export const PROFILE = {
   name: "周庭安",
   englishName: "Ting-An Zhou",
-  title: "全端軟體工程師 | AI 應用開發",
+  title: "全端軟體工程師ㄇaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaㄇ",
   email: "bobi.bboi@gmail.com",
   phone: "0968930679",
   github: "https://github.com/adpoe0716",
@@ -72,20 +72,24 @@ export const EXPERIENCES: Experience[] = [
       "RAG 知識庫建置：設計並製作檢索增強生成 (RAG) 知識庫原型，整合聊天記錄與圖像數據，實現高準確度的語意搜索功能。",
       "技術品牌經營：管理團隊 Instagram 技術頻道，分享 AI 工具應用與開發見解。"
     ],
-    reflection: "這是我第一次將 AI 技術實際落地到商業場景中。從零開始建置 RAG 知識庫的過程充滿挑戰，尤其是在調整 Prompt 和處理資料清洗的部分。看到自己開發的自動化工具能為團隊節省大量重複性工作的時間，那種成就感是無可比擬的。這份工作也培養了我獨立解決問題的能力，以及如何快速學習新技術（如 LangChain）並應用到專案中。",
+    reflection: `這是我第一次正式踏入科技產業進行實習。能加入這間充滿活力的新創公司，對我的職業生涯起步幫助極大。
+
+在新創環境中，除了感謝老闆與前輩工程師在技術上的悉心指導外，最讓我印象深刻的是團隊間「高強度的思維碰撞」。在這樣的氛圍下，我學到最有價值的技能並非單一的程式語言，而是**「如何快速掌握一項新技術」並將其轉化為「快速落地產品」**的執行力。
+
+此外，這裡的機會無處不在。我見識到了各種奇思妙想，工作內容也跨出了單純的程式開發（Coding）。我有機會參與系統規劃，甚至接觸到自媒體經營等多元內容。這段經歷讓我明白，身為工程師也能擁有多元視角，這次實習實在獲益良多。`,
     image: "img/Thinker.png"
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "政黨傾向分辨器 (Political Leaning Classifier)",
+    title: "政黨傾向分辨器",
     period: "2024",
     description: "基於 NLP 技術的政治傾向分析工具",
     techStack: ["Python", "Logistic Regression","Pandas"],
     images: ["img/python.png"],
     details: [
-      "選取四個具有代表性的側翼粉專，利用自然語言處理 (NLP) 技術，分析文本內容並預測其政治傾向（如：偏藍、偏綠、中立）。",
+      "選取四個具有代表性的側翼粉專，利用自然語言處理 (NLP) 技術，分析文本內容並預測其政治傾向（如：偏藍、偏綠）。",
       "使用羅吉斯回歸模型（Logistic Regression）訓練並驗證，準確率良好後完成模型建構",
       "資料前處理：包含繁體中文斷詞、去除停用詞與資料增強。",      
     ]
@@ -93,7 +97,7 @@ export const PROJECTS: Project[] = [
   {
     title: "ESG：台灣水產養殖淨零路徑",
     period: "2023.06 - 2025.01",
-    description: "畢業專題 - 結合 IoT 與 GenAI 的永續魚塭管理系統",
+    description: "畢業專題 - 結合模擬 IoT 與ESG策略的永續魚塭管理系統",
     techStack: ["React", "Node.js", "Flask", "MySQL", "LangChain", "OpenAI API", "Ant Design"],
     images: ["img/f1.png","img/f2.png","img/15.png","img/f3.png","img/f4.png","img/f5.png","img/f6.png","img/f7.png","img/20.png","img/21.png","img/24.png"],
     details: [
@@ -106,7 +110,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Campus Recruit 人資招募系統",
     period: "2025.02 - 2025.06",
-    description: "鈦坦科技實習專案 - 企業級招募流程管理",
+    description: "鈦坦科技實習專案 - 企業級招募流程系統",
     techStack: ["Vue.js", "ASP.NET", "TypeScript", "TailwindCSS", "MSSQL"],
     images: ["img/ca1.png","img/ca2.png","img/ca3.png","img/ca4.png"],
     details: [
@@ -118,7 +122,7 @@ export const PROJECTS: Project[] = [
   {
     title: "工程建案管理系統",
     period: "2022.06 - 2023.01",
-    description: "營建專案管理平台",
+    description: "工程進度管理平台",
     techStack: ["PHP", "MySQL", "Bootstrap", "JavaScript"],
     images: ["img/case3.png","img/case2.png","img/case1.png"],
     details: [

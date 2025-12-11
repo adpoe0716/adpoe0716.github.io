@@ -186,7 +186,7 @@ const Hero = () => {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-          你好，我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
+          安安你好!我是 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{PROFILE.name}</span>
         </h1>
         <h2 className="text-xl md:text-2xl text-slate-200 mb-8 font-light flex items-center justify-center gap-2">
           {PROFILE.title}
@@ -360,7 +360,7 @@ const ExperienceSection = () => {
                       className="w-full sm:w-auto flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-primary/20 to-secondary/20 hover:from-primary/30 hover:to-secondary/30 text-white rounded-xl transition-all shadow-[0_0_10px_rgba(129,140,248,0.2)] border border-primary/30 text-sm font-bold group/btn"
                     >
                       <MessageSquareQuote className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform text-primary" />
-                      查看心得感想
+                      查看我的心得!
                     </button>
                   )}
                 </div>
@@ -425,7 +425,7 @@ const ProjectSection = () => {
     <section id="projects" className="py-24 relative z-10 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-3xl font-bold text-center mb-16 text-white">
-          <span className="border-b-4 border-secondary/50 pb-2 shadow-[0_4px_10px_rgba(192,132,252,0.3)]">精選專案</span>
+          <span className="border-b-4 border-secondary/50 pb-2 shadow-[0_4px_10px_rgba(192,132,252,0.3)]">專案</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -572,7 +572,7 @@ const ProjectSection = () => {
 
               <div>
                 <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
-                  <Server className="mr-2" /> 技術堆疊
+                  <Server className="mr-2" /> 實作技術
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {selectedProject.techStack.map((tech) => (
